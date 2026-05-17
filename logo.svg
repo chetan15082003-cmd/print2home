@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 50" width="260" height="50">
+  <!-- PRINT -->
+  <text x="0" y="40" font-family="Arial Black,Arial" font-size="40" font-weight="900" fill="#1A56DB">PRINT</text>
+  <!-- Gold 2 circle -->
+  <circle cx="158" cy="26" r="16" fill="#F59E0B"/>
+  <text x="158" y="34" text-anchor="middle" font-family="Arial Black,Arial" font-size="18" font-weight="900" fill="white">2</text>
+  <!-- House shape replacing H -->
+  <polygon points="196,5 176,18 216,18" fill="#1A56DB"/>
+  <rect x="178" y="18" width="36" height="24" rx="2" fill="#1A56DB"/>
+  <rect x="182" y="30" width="28" height="12" rx="2" fill="#60A5FA"/>
+  <rect x="186" y="33" width="16" height="2" rx="1" fill="white" opacity="0.8"/>
+  <rect x="186" y="37" width="11" height="2" rx="1" fill="white" opacity="0.8"/>
+  <!-- OME -->
+  <text x="218" y="40" font-family="Arial Black,Arial" font-size="40" font-weight="900" fill="#1A56DB">OME</text>
+</svg>

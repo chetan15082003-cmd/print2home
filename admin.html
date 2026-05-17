@@ -1,0 +1,259 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Panel – Print2Home</title>
+  <link rel="stylesheet" href="css/admin.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+
+<!-- LOGIN SCREEN -->
+<div class="login-screen" id="loginScreen">
+  <div class="login-box">
+    <div class="login-logo">🖨️</div>
+    <h1>Print2Home</h1>
+    <p>Admin Panel — Authorised Access Only</p>
+
+    <!-- LOGIN FORM -->
+    <div id="loginForm">
+      <div class="login-field">
+        <label>Username</label>
+        <input type="text" id="loginUser" placeholder="Enter username"/>
+      </div>
+      <div class="login-field">
+        <label>Password</label>
+        <div class="pass-wrap">
+          <input type="password" id="loginPass" placeholder="Enter password"/>
+          <button class="show-pass" onclick="togglePass('loginPass', this)">👁</button>
+        </div>
+      </div>
+      <button class="login-btn" onclick="doLogin()">🔐 Login to Admin Panel</button>
+      <p class="login-error" id="loginError"></p>
+      <button class="forgot-link" onclick="showForgot()">🔑 Forgot Password?</button>
+    </div>
+
+    <!-- FORGOT PASSWORD FORM -->
+    <div id="forgotForm" style="display:none">
+      <div class="forgot-title">🔑 Reset Password</div>
+      <p class="forgot-desc">Enter your recovery email to receive a reset code.</p>
+      <div class="login-field">
+        <label>Recovery Email</label>
+        <input type="email" id="recoveryEmail" placeholder="Enter your email"/>
+      </div>
+      <button class="login-btn" onclick="sendResetCode()">📧 Send Reset Code</button>
+      <p class="login-error" id="forgotError"></p>
+      <button class="forgot-link" onclick="showLogin()">← Back to Login</button>
+    </div>
+
+    <!-- RESET CODE FORM -->
+    <div id="resetForm" style="display:none">
+      <div class="forgot-title">✅ Enter Reset Code</div>
+      <p class="forgot-desc">Check your email for the 6-digit code.</p>
+      <div class="login-field">
+        <label>Reset Code</label>
+        <input type="text" id="resetCode" placeholder="Enter 6-digit code" maxlength="6"/>
+      </div>
+      <div class="login-field">
+        <label>New Password</label>
+        <div class="pass-wrap">
+          <input type="password" id="newPass" placeholder="Enter new password"/>
+          <button class="show-pass" onclick="togglePass('newPass', this)">👁</button>
+        </div>
+      </div>
+      <div class="login-field">
+        <label>Confirm New Password</label>
+        <div class="pass-wrap">
+          <input type="password" id="confirmPass" placeholder="Confirm new password"/>
+          <button class="show-pass" onclick="togglePass('confirmPass', this)">👁</button>
+        </div>
+      </div>
+      <button class="login-btn" onclick="resetPassword()">🔒 Reset Password</button>
+      <p class="login-error" id="resetError"></p>
+      <button class="forgot-link" onclick="showLogin()">← Back to Login</button>
+    </div>
+
+    <!-- SUCCESS MESSAGE -->
+    <div id="successMsg" style="display:none">
+      <div class="success-icon">🎉</div>
+      <div class="forgot-title">Password Reset!</div>
+      <p class="forgot-desc">Your password has been updated successfully.</p>
+      <button class="login-btn" onclick="showLogin()">← Back to Login</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- ADMIN PANEL -->
+<div class="admin-wrap" id="adminPanel" style="display:none">
+
+  <header class="admin-header">
+    <div class="admin-header-left">
+      <span class="admin-logo">🖨️</span>
+      <div>
+        <h1>Admin Panel</h1>
+        <p>Manage all tickets and leads</p>
+      </div>
+    </div>
+    <div class="admin-header-right">
+      <button class="hbtn orange" onclick="showPayment()">💳 Create Payment</button>
+      <button class="hbtn yellow" onclick="showChangePass()">🔒 Change Password</button>
+      <a href="index.html" target="_blank" class="hbtn green">🌐 View Site</a>
+      <button class="hbtn blue" onclick="loadData()">🔄 Refresh</button>
+      <button class="hbtn red" onclick="doLogout()">🚪 Logout</button>
+      <!-- PAYMENT MODAL -->
+<div class="modal-overlay" id="paymentModal" style="display:none">
+  <div class="modal-box" style="max-width:520px">
+    <h2>💳 Create Payment Request</h2>
+    <p>Send a payment request to your customer.</p>
+
+    <div class="login-field">
+      <label>Customer Name</label>
+      <input type="text" id="payName" placeholder="John Smith"/>
+    </div>
+    <div class="login-field">
+      <label>Customer Email</label>
+      <input type="email" id="payEmail" placeholder="john@email.com"/>
+    </div>
+    <div class="login-field">
+      <label>Amount (USD)</label>
+      <input type="number" id="payAmount" placeholder="29" min="1"/>
+    </div>
+    <div class="login-field">
+      <label>Service</label>
+      <select id="payService">
+        <option>One-Time Fix — $29</option>
+        <option>Annual Plan — $99</option>
+        <option>Business Plan — $199</option>
+        <option>Custom Amount</option>
+      </select>
+    </div>
+    <div class="login-field">
+      <label>Payment Method</label>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:6px">
+        <label style="display:flex;align-items:center;gap:6px;cursor:pointer;padding:10px;border:1.5px solid #E5E7EB;border-radius:8px;font-size:0.85rem;font-weight:600">
+          <input type="radio" name="payMethod" value="paypal" checked/> 🅿️ PayPal
+        </label>
+        <label style="display:flex;align-items:center;gap:6px;cursor:pointer;padding:10px;border:1.5px solid #E5E7EB;border-radius:8px;font-size:0.85rem;font-weight:600">
+          <input type="radio" name="payMethod" value="card"/> 💳 Card
+        </label>
+        <label style="display:flex;align-items:center;gap:6px;cursor:pointer;padding:10px;border:1.5px solid #E5E7EB;border-radius:8px;font-size:0.85rem;font-weight:600">
+          <input type="radio" name="payMethod" value="cheque"/> 📝 Cheque
+        </label>
+      </div>
+    </div>
+    <div class="login-field">
+      <label>Note (optional)</label>
+      <textarea id="payNote" rows="2" placeholder="e.g. HP printer WiFi fix session" style="width:100%;padding:10px;border:1.5px solid #E5E7EB;border-radius:8px;font-family:Inter,sans-serif;font-size:0.9rem;resize:none;outline:none"></textarea>
+    </div>
+
+    <p class="login-error" id="payError"></p>
+    <div style="display:flex;gap:10px;margin-top:8px">
+      <button class="login-btn" style="flex:1" onclick="sendPayment()">💳 Send Payment Request</button>
+      <button class="login-btn" style="flex:1;background:#6B7280" onclick="closePayment()">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- Payment Success -->
+<div class="modal-overlay" id="paySuccessModal" style="display:none">
+  <div class="modal-box" style="text-align:center;max-width:420px">
+    <div style="font-size:3rem;margin-bottom:12px">✅</div>
+    <h2>Payment Request Sent!</h2>
+    <p id="paySuccessMsg" style="color:#6B7280;margin:12px 0 24px"></p>
+    <button class="login-btn" onclick="document.getElementById('paySuccessModal').style.display='none'">Close</button>
+  </div>
+ </div>
+</div>
+  </header>
+
+  <main class="admin-main">
+
+    <div class="stats-row">
+      <div class="stat-card"><div class="stat-num" id="statTotal">0</div><div class="stat-label">Total Tickets</div></div>
+      <div class="stat-card green"><div class="stat-num" id="statOpen">0</div><div class="stat-label">Open</div></div>
+      <div class="stat-card yellow"><div class="stat-num" id="statProgress">0</div><div class="stat-label">In Progress</div></div>
+      <div class="stat-card blue"><div class="stat-num" id="statResolved">0</div><div class="stat-label">Resolved</div></div>
+    </div>
+
+    <div class="brand-stats" id="brandStats"></div>
+
+    <div class="tickets-section">
+      <div class="tickets-header">
+        <h2>All Support Tickets</h2>
+        <div class="tickets-filters">
+          <input type="text" id="searchBox" placeholder="Search tickets..." oninput="filterTickets()"/>
+          <select id="filterStatus" onchange="filterTickets()">
+            <option value="">All Status</option>
+            <option value="Open">Open</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Resolved">Resolved</option>
+          </select>
+          <select id="filterBrand" onchange="filterTickets()">
+            <option value="">All Brands</option>
+            <option value="HP">HP</option>
+            <option value="Canon">Canon</option>
+            <option value="Epson">Epson</option>
+            <option value="Brother">Brother</option>
+          </select>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table class="tickets-table">
+          <thead>
+            <tr>
+              <th>TICKET NO</th><th>CUSTOMER</th><th>BRAND</th>
+              <th>ISSUE</th><th>DEVICE</th><th>STATUS</th><th>DATE</th><th>ACTION</th>
+            </tr>
+          </thead>
+          <tbody id="ticketsBody">
+            <tr><td colspan="8" style="text-align:center;padding:40px;color:#6B7280">Loading tickets...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- CHANGE PASSWORD MODAL -->
+<div class="modal-overlay" id="changePassModal" style="display:none">
+  <div class="modal-box">
+    <h2>🔒 Change Password</h2>
+    <p>Update your admin panel password.</p>
+    <div class="login-field">
+      <label>Current Password</label>
+      <div class="pass-wrap">
+        <input type="password" id="currentPass" placeholder="Enter current password"/>
+        <button class="show-pass" onclick="togglePass('currentPass',this)">👁</button>
+      </div>
+    </div>
+    <div class="login-field">
+      <label>New Password</label>
+      <div class="pass-wrap">
+        <input type="password" id="modalNewPass" placeholder="Enter new password"/>
+        <button class="show-pass" onclick="togglePass('modalNewPass',this)">👁</button>
+      </div>
+    </div>
+    <div class="login-field">
+      <label>Confirm New Password</label>
+      <div class="pass-wrap">
+        <input type="password" id="modalConfirmPass" placeholder="Confirm new password"/>
+        <button class="show-pass" onclick="togglePass('modalConfirmPass',this)">👁</button>
+      </div>
+    </div>
+    <p class="login-error" id="changePassError"></p>
+    <div style="display:flex;gap:10px;margin-top:8px">
+      <button class="login-btn" style="flex:1" onclick="changePassword()">Update Password</button>
+      <button class="login-btn" style="flex:1;background:#6B7280" onclick="closeChangePass()">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/admin.js"></script>
+</body>
+</html>
+
+

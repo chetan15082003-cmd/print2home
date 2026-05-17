@@ -1,0 +1,62 @@
+/* SERVICE HERO */
+.service-hero{text-align:center;padding:72px 24px;color:white}
+.service-hero-icon{font-size:4rem;margin-bottom:16px;animation:bounceIn 0.6s ease}
+.service-hero h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;margin-bottom:12px}
+.service-hero p{font-size:1rem;opacity:0.85;max-width:600px;margin:0 auto 28px}
+.service-hero-btn{display:inline-block;background:white;color:#1A56DB;padding:14px 32px;border-radius:50px;font-weight:800;font-size:1rem;transition:all 0.2s}
+.service-hero-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.2)}
+
+/* INTRO */
+.service-intro{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:start;margin-bottom:64px;padding-top:8px}
+.service-intro-text h2{font-size:1.7rem;font-weight:800;margin-bottom:14px;color:#111827}
+.service-intro-text p{color:#6B7280;line-height:1.75;margin-bottom:12px;font-size:0.95rem}
+.service-quick-info{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.quick-info-item{background:white;border:1.5px solid #E5E7EB;border-radius:12px;padding:16px;display:flex;align-items:center;gap:12px}
+.qi-icon{font-size:1.5rem;flex-shrink:0}
+.quick-info-item strong{display:block;font-size:0.82rem;font-weight:700;color:#111827;margin-bottom:2px}
+.quick-info-item p{font-size:0.82rem;color:#6B7280;margin:0}
+
+/* STEPS */
+.service-steps{margin-bottom:64px}
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.step-card{background:white;border:1.5px solid #E5E7EB;border-radius:12px;padding:28px 20px;text-align:center}
+.step-num{font-size:2.5rem;font-weight:900;color:#EFF6FF;line-height:1;margin-bottom:12px;font-family:'Inter',sans-serif}
+.step-card h3{font-size:1rem;font-weight:700;margin-bottom:8px;color:#111827}
+.step-card p{font-size:0.87rem;color:#6B7280;line-height:1.6}
+
+/* COMMON ISSUES */
+.common-issues{margin-bottom:64px}
+.issues-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.issue-card{background:white;border:1.5px solid #E5E7EB;border-radius:12px;padding:28px;transition:all 0.2s}
+.issue-card:hover{border-color:#1A56DB;box-shadow:0 8px 24px rgba(26,86,219,0.1);transform:translateY(-2px)}
+.issue-icon{font-size:2rem;margin-bottom:12px}
+.issue-card h3{font-size:1rem;font-weight:700;margin-bottom:8px;color:#111827}
+.issue-card p{font-size:0.87rem;color:#6B7280;line-height:1.6}
+
+/* INCLUDES */
+.service-includes{margin-bottom:64px}
+.includes-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.include-item{background:#F0FDF4;border:1.5px solid #BBF7D0;border-radius:10px;padding:14px 16px;font-size:0.85rem;font-weight:600;color:#065F46;text-align:center}
+
+/* BRANDS */
+.brands-supported{margin-bottom:64px}
+.brand-pills-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.brand-pill-s{background:white;border:2px solid #E5E7EB;border-radius:50px;padding:10px 28px;font-weight:800;font-size:1rem;color:#111827;transition:all 0.2s;cursor:default}
+.brand-pill-s:hover{border-color:#1A56DB;color:#1A56DB;background:#EFF6FF}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .service-intro{grid-template-columns:1fr}
+  .steps-grid{grid-template-columns:repeat(2,1fr)}
+  .includes-grid{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:768px){
+  .issues-grid{grid-template-columns:repeat(2,1fr)}
+  .steps-grid{grid-template-columns:1fr 1fr}
+  .includes-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:480px){
+  .issues-grid,.steps-grid{grid-template-columns:1fr}
+  .includes-grid{grid-template-columns:1fr 1fr}
+  .service-quick-info{grid-template-columns:1fr}
+}

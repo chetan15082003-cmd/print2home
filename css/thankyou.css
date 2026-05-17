@@ -1,0 +1,125 @@
+.ty-page {
+  background: #f3f4f6;
+  min-height: calc(100vh - 72px);
+  padding: 48px 24px;
+}
+.ty-container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+.ty-card {
+  background: white;
+  border-radius: 16px;
+  padding: 48px 32px;
+  text-align: center;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+}
+.ty-check {
+  font-size: 4rem;
+  margin-bottom: 16px;
+  animation: bounceIn 0.6s ease;
+}
+.ty-title {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 900;
+  color: #111827;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+.ty-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #6B7280;
+}
+.ty-boxes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.ty-box {
+  border-radius: 16px;
+  padding: 36px 32px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+}
+.ty-box-blue  { background: #1e3a8a; color: white; }
+.ty-box-white { background: white; color: #111827; }
+.ty-box-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.ty-box-icon {
+  font-size: 1.4rem;
+  background: rgba(255,255,255,0.15);
+  width: 44px; height: 44px;
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.ty-box-icon.pink { background: #FFF1F2; }
+.ty-box-blue h2  { font-size: 1.1rem; font-weight: 800; color: white; }
+.ty-box-white h2 { font-size: 1.1rem; font-weight: 800; color: #111827; }
+.ty-box-sub {
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  opacity: 0.85;
+}
+.ty-box-white .ty-box-sub { color: #6B7280; opacity: 1; }
+.ty-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.ty-list li { font-size: 0.92rem; color: rgba(255,255,255,0.9); font-weight: 500; }
+.ty-ticket-block {
+  background: #f9fafb;
+  border: 1px solid #E5E7EB;
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-bottom: 20px;
+}
+.ty-ticket-row {
+  display: flex;
+  gap: 10px;
+  padding: 6px 0;
+  border-bottom: 1px solid #F3F4F6;
+  font-size: 0.88rem;
+}
+.ty-ticket-row:last-child { border-bottom: none; }
+.ty-ticket-label { font-weight: 700; color: #374151; min-width: 80px; }
+.ty-ticket-val   { color: #1A56DB; font-weight: 600; word-break: break-all; }
+.ty-call-title { font-weight: 700; font-size: 0.9rem; color: #374151; margin-bottom: 10px; }
+.ty-call-btns  { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
+.ty-call-btn {
+  background: #EFF6FF;
+  color: #1A56DB;
+  border: 1.5px solid #BFDBFE;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-align: center;
+  transition: all 0.2s;
+  display: block;
+}
+.ty-call-btn:hover { background: #1A56DB; color: white; border-color: #1A56DB; }
+.ty-home-btn {
+  display: block;
+  text-align: center;
+  background: #111827;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+.ty-home-btn:hover { background: #1A56DB; }
+@keyframes bounceIn {
+  0%   { transform: scale(0.3); opacity: 0; }
+  50%  { transform: scale(1.1); }
+  100% { transform: scale(1);   opacity: 1; }
+}
+@media (max-width: 768px) {
+  .ty-boxes { grid-template-columns: 1fr; }
+  .ty-box   { padding: 24px 20px; }
+}

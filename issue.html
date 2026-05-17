@@ -1,0 +1,168 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Print2Home – Analysing The Problem</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/issue.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="logo">
+      <svg class="logo-icon" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="56" height="56" rx="12" fill="#1A56DB"/>
+        <path d="M28 8L8 22H13V24H10V48H46V24H43V22L28 8Z" fill="none" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+        <path d="M28 8L8 22V24H13V48H46V24H43V22L28 8Z" fill="white" opacity="0.08"/>
+        <rect x="16" y="27" width="24" height="14" rx="3" fill="white"/>
+        <rect x="20" y="20" width="16" height="9" rx="2" fill="#60A5FA"/>
+        <rect x="20" y="39" width="16" height="6" rx="1" fill="#DBEAFE"/>
+        <circle cx="35" cy="34" r="2" fill="#1A56DB"/>
+        <circle cx="30" cy="34" r="2" fill="#1A56DB"/>
+        <line x1="22" y1="42" x2="34" y2="42" stroke="#93C5FD" stroke-width="1.5"/>
+        <line x1="22" y1="44" x2="30" y2="44" stroke="#93C5FD" stroke-width="1.5"/>
+      </svg>
+      <span class="logo-text">Print<span class="logo-accent">2</span>Home</span>
+    </a>
+    <div class="nav-phones">
+      <a href="tel:+18889008695" class="nav-phone">
+        <img src="https://flagcdn.com/20x15/us.png" alt="USA"/> +1 888-900-8695
+      </a>
+      <a href="tel:+442080400210" class="nav-phone">
+        <img src="https://flagcdn.com/20x15/gb.png" alt="UK"/> +44 20-8040-0210
+      </a>
+      
+    </div>
+    <div class="nav-right">
+      <a href="index.html" class="nav-link-btn">← Back</a>
+      <a href="index.html#contact" class="nav-cta-btn">● 24/7 Expert Consultation</a>
+    </div>
+    <button class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="tel:+18889008695">🇺🇸 +1 888-900-8695</a>
+    <a href="tel:+442080400210">🇬🇧 +44 20-8040-0210</a>
+    
+    <a href="index.html#contact" class="nav-cta-btn" style="text-align:center;margin:8px 16px">24/7 Expert Consultation</a>
+  </div>
+</header>
+
+<!-- MAIN ISSUE PAGE -->
+<main class="issue-page">
+  <div class="issue-wrapper">
+
+    <!-- Title -->
+    <h1 class="issue-title">ANALYSING THE PROBLEM</h1>
+    <p class="issue-subtitle">
+      Kindly answer the questions below to help us deliver the most suitable assistance, and then click Continue.
+    </p>
+
+    <!-- Selected Brand shown -->
+    <div class="selected-brand-bar">
+      🖨️ Selected Brand: <strong id="brandDisplay">HP</strong>
+    </div>
+
+    <!-- Printer Model Number -->
+    <div class="issue-field">
+      <label class="issue-label">Printer Model Number</label>
+      <div class="model-input-wrap">
+        <span class="model-icon">🖨️</span>
+        <input type="text" id="modelNumber" class="model-input" placeholder="Type here..."/>
+      </div>
+    </div>
+
+    <!-- Issue Type -->
+    <div class="issue-field">
+      <label class="issue-label">
+        Choose the type of printer issue from the options below.
+        <span class="required">*</span>
+      </label>
+      <div class="options-grid issue-grid">
+        <button class="option-btn" onclick="selectIssue(this)">
+          <span class="opt-icon">⚙️</span> Set-up a new printer
+        </button>
+        <button class="option-btn" onclick="selectIssue(this)">
+          <span class="opt-icon">📶</span> Wi-Fi or Wireless setup
+        </button>
+        <button class="option-btn" onclick="selectIssue(this)">
+          <span class="opt-icon">🔌</span> Offline or Can't connect
+        </button>
+        <button class="option-btn" onclick="selectIssue(this)">
+          <span class="opt-icon">🖨️</span> Won't print
+        </button>
+        <button class="option-btn" onclick="selectIssue(this)">
+          <span class="opt-icon">📄</span> Printing blank papers
+        </button>
+        <button class="option-btn" onclick="selectIssue(this)">
+          <span class="opt-icon">📋</span> Paper jam
+        </button>
+        <button class="option-btn" onclick="selectIssue(this)">
+          <span class="opt-icon">⚠️</span> Error code or Error message
+        </button>
+        <button class="option-btn" onclick="selectIssue(this)">
+          <span class="opt-icon">🖥️</span> Scanner issue
+        </button>
+      </div>
+    </div>
+
+    <!-- Device Type -->
+    <div class="issue-field">
+      <label class="issue-label">
+        Choose the type of device that will connect to the printer from the options below.
+      </label>
+      <div class="options-grid device-grid">
+        <button class="option-btn device-btn" onclick="selectDevice(this)">
+          <span class="opt-icon">🪟</span> Windows
+        </button>
+        <button class="option-btn device-btn" onclick="selectDevice(this)">
+          <span class="opt-icon">🍎</span> Mac
+        </button>
+        <button class="option-btn device-btn" onclick="selectDevice(this)">
+          <span class="opt-icon">🌐</span> Chromebook
+        </button>
+        <button class="option-btn device-btn" onclick="selectDevice(this)">
+          <span class="opt-icon">🤖</span> Android
+        </button>
+        <button class="option-btn device-btn" onclick="selectDevice(this)">
+          <span class="opt-icon">📱</span> iPhone/iPad
+        </button>
+      </div>
+    </div>
+
+    <!-- Continue Button -->
+    <div class="continue-row">
+      <button class="continue-btn" onclick="submitIssue()">
+        Continue →
+      </button>
+    </div>
+
+  </div>
+</main>
+
+<!-- Success Popup -->
+<div class="issue-popup" id="issuePopup">
+  <div class="issue-popup-box">
+    <div class="popup-tick">✅</div>
+    <h2>We're On It!</h2>
+    <p>A certified <strong id="popupBrand2"></strong> specialist will call you back within <strong>5 minutes</strong>.</p>
+    <p class="popup-sub">Or call us directly right now:</p>
+    <div class="popup-call-btns">
+      <a href="tel:+18889008695" class="btn btn-primary">🇺🇸 +1 888-900-8695</a>
+      <a href="tel:+442080400210" class="btn btn-primary">🇬🇧 +44 20-8040-0210</a>
+      
+    </div>
+    <button class="popup-close-btn" onclick="closeIssuePopup()">✕ Close</button>
+  </div>
+</div>
+
+<script src="js/issue.js"></script>
+</body>
+</html>
+
+

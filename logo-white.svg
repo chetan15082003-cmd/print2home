@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50" width="200" height="50">
+  <rect width="50" height="50" rx="10" fill="rgba(255,255,255,0.15)"/>
+  <path d="M25 6L8 18H12V20H10V44H40V20H38V18L25 6Z" fill="none" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="14" y="23" width="22" height="13" rx="2" fill="white"/>
+  <rect x="17" y="17" width="16" height="8" rx="1.5" fill="#60A5FA"/>
+  <rect x="17" y="34" width="16" height="6" rx="1" fill="rgba(255,255,255,0.5)"/>
+  <circle cx="31" cy="30" r="1.8" fill="#1A56DB"/>
+  <circle cx="26" cy="30" r="1.8" fill="#1A56DB"/>
+  <text x="58" y="36" font-family="Arial Black,Arial,sans-serif" font-size="28" font-weight="900" fill="white" letter-spacing="-0.5">Print</text>
+  <text x="118" y="36" font-family="Arial Black,Arial,sans-serif" font-size="28" font-weight="900" fill="#F59E0B" letter-spacing="-0.5">2</text>
+  <text x="133" y="36" font-family="Arial Black,Arial,sans-serif" font-size="28" font-weight="900" fill="white" letter-spacing="-0.5">Home</text>
+</svg>
