@@ -24,3 +24,10 @@ document.getElementById('tyDevice').textContent = device;
 document.getElementById('tyTicket').textContent = generateTicket();
 
 sessionStorage.clear();
+// Fill Q&A section from sessionStorage
+document.getElementById('qaBrand').textContent   = sessionStorage.getItem('brand')   || '—';
+document.getElementById('qaModel').textContent   = sessionStorage.getItem('model')   || 'Not provided';
+document.getElementById('qaIssue').textContent   = sessionStorage.getItem('issue')   || '—';
+document.getElementById('qaDevice').textContent  = sessionStorage.getItem('device')  || '—';
+document.getElementById('qaName').textContent    = sessionStorage.getItem('name')    || '—';
+document.getElementById('qaCountry').textContent = sessionStorage.getItem('country') || '—';
