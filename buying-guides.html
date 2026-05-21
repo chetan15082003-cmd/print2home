@@ -30,7 +30,7 @@
     </div>
     <div class="nav-right">
       <a href="buying-guides.html" class="nav-link-btn">Buying Guides</a>
-      <a href="index.html" class="nav-cta-btn">● 24/7 Expert Consultation</a>
+      <a href="#" class="nav-cta-btn" onclick="show247Popup(event)">● 24/7 Expert Consultation</a>
     </div>
     <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
   </div>
@@ -50,7 +50,6 @@
 <main class="guides-main">
   <div class="guides-container">
     <div class="guides-grid-wrap">
-
       <div class="guides-search">
         <input type="text" id="searchInput" placeholder="Search printers..." oninput="searchGuides()"/>
         <button onclick="searchGuides()">🔍</button>
@@ -59,9 +58,7 @@
       <div class="guides-grid" id="guidesGrid">
 
         <div class="guide-card" data-tags="hp smart tank 5103">
-          <div class="guide-img-wrap">
-            <img src="https://m.media-amazon.com/images/I/61pzJSbsqDL._AC_SL1500_.jpg" alt="HP Smart Tank 5103" class="guide-printer-img" onerror="this.src='https://via.placeholder.com/300x200?text=HP+Smart+Tank+5103'"/>
-          </div>
+          <div class="guide-img">🖨️</div>
           <div class="guide-body">
             <div class="guide-meta"><span>👤 Admin</span><span>📅 21 Oct, 2025</span></div>
             <h2 class="guide-title">HP Smart Tank 5103 Buying Guide 2026: Is It Right for You?</h2>
@@ -71,9 +68,7 @@
         </div>
 
         <div class="guide-card" data-tags="hp smart tank 5101">
-          <div class="guide-img-wrap">
-            <img src="https://m.media-amazon.com/images/I/61T5EJNX2tL._AC_SL1500_.jpg" alt="HP Smart Tank 5101" class="guide-printer-img" onerror="this.src='https://via.placeholder.com/300x200?text=HP+Smart+Tank+5101'"/>
-          </div>
+          <div class="guide-img">🖨️</div>
           <div class="guide-body">
             <div class="guide-meta"><span>👤 Admin</span><span>📅 20 Oct, 2025</span></div>
             <h2 class="guide-title">HP Smart Tank 5101 Buying Guide 2026: Is It Right for You?</h2>
@@ -83,9 +78,7 @@
         </div>
 
         <div class="guide-card" data-tags="hp deskjet 2855e budget">
-          <div class="guide-img-wrap">
-            <img src="https://m.media-amazon.com/images/I/61yq7xXhiqL._AC_SL1500_.jpg" alt="HP DeskJet 2855e" class="guide-printer-img" onerror="this.src='https://via.placeholder.com/300x200?text=HP+DeskJet+2855e'"/>
-          </div>
+          <div class="guide-img">🖨️</div>
           <div class="guide-body">
             <div class="guide-meta"><span>👤 Admin</span><span>📅 19 Oct, 2025</span></div>
             <h2 class="guide-title">HP DeskJet 2855e Buying Guide 2026: Best Budget Printer?</h2>
@@ -94,10 +87,8 @@
           </div>
         </div>
 
-        <div class="guide-card" data-tags="canon pixma tr4720 wireless">
-          <div class="guide-img-wrap">
-            <img src="https://m.media-amazon.com/images/I/71YBvSHWkAL._AC_SL1500_.jpg" alt="Canon PIXMA TR4720" class="guide-printer-img" onerror="this.src='https://via.placeholder.com/300x200?text=Canon+PIXMA+TR4720'"/>
-          </div>
+        <div class="guide-card" data-tags="canon pixma tr4720">
+          <div class="guide-img">🖨️</div>
           <div class="guide-body">
             <div class="guide-meta"><span>👤 Admin</span><span>📅 18 Oct, 2025</span></div>
             <h2 class="guide-title">Canon PIXMA TR4720 Review 2026: Worth Buying?</h2>
@@ -106,10 +97,8 @@
           </div>
         </div>
 
-        <div class="guide-card" data-tags="epson ecotank et2800 refillable">
-          <div class="guide-img-wrap">
-            <img src="https://m.media-amazon.com/images/I/71TXjrJwYML._AC_SL1500_.jpg" alt="Epson EcoTank ET-2800" class="guide-printer-img" onerror="this.src='https://via.placeholder.com/300x200?text=Epson+EcoTank+ET-2800'"/>
-          </div>
+        <div class="guide-card" data-tags="epson ecotank et2800">
+          <div class="guide-img">🖨️</div>
           <div class="guide-body">
             <div class="guide-meta"><span>👤 Admin</span><span>📅 17 Oct, 2025</span></div>
             <h2 class="guide-title">Epson EcoTank ET-2800 Buying Guide: Best Ink Tank Printer?</h2>
@@ -118,10 +107,8 @@
           </div>
         </div>
 
-        <div class="guide-card" data-tags="brother hl l2350dw laser monochrome">
-          <div class="guide-img-wrap">
-            <img src="https://m.media-amazon.com/images/I/61TDRlkqFAL._AC_SL1500_.jpg" alt="Brother HL-L2350DW" class="guide-printer-img" onerror="this.src='https://via.placeholder.com/300x200?text=Brother+HL-L2350DW'"/>
-          </div>
+        <div class="guide-card" data-tags="brother laser hl l2350dw">
+          <div class="guide-img">🖨️</div>
           <div class="guide-body">
             <div class="guide-meta"><span>👤 Admin</span><span>📅 16 Oct, 2025</span></div>
             <h2 class="guide-title">Brother HL-L2350DW Review: Best Laser Printer for Home?</h2>
@@ -130,10 +117,8 @@
           </div>
         </div>
 
-        <div class="guide-card" data-tags="hp color laserjet pro m255dw office">
-          <div class="guide-img-wrap">
-            <img src="https://m.media-amazon.com/images/I/61T+P0YMFVL._AC_SL1500_.jpg" alt="HP Color LaserJet Pro M255dw" class="guide-printer-img" onerror="this.src='https://via.placeholder.com/300x200?text=HP+Color+LaserJet+M255dw'"/>
-          </div>
+        <div class="guide-card" data-tags="hp color laserjet m255dw">
+          <div class="guide-img">🖨️</div>
           <div class="guide-body">
             <div class="guide-meta"><span>👤 Admin</span><span>📅 15 Oct, 2025</span></div>
             <h2 class="guide-title">HP Color LaserJet Pro M255dw: Best Color Laser Printer?</h2>
@@ -142,10 +127,8 @@
           </div>
         </div>
 
-        <div class="guide-card" data-tags="canon imageclass mf267dw laser wireless">
-          <div class="guide-img-wrap">
-            <img src="https://m.media-amazon.com/images/I/71W4DLVVSFL._AC_SL1500_.jpg" alt="Canon imageCLASS MF267dw" class="guide-printer-img" onerror="this.src='https://via.placeholder.com/300x200?text=Canon+imageCLASS+MF267dw'"/>
-          </div>
+        <div class="guide-card" data-tags="canon imageclass mf267dw">
+          <div class="guide-img">🖨️</div>
           <div class="guide-body">
             <div class="guide-meta"><span>👤 Admin</span><span>📅 14 Oct, 2025</span></div>
             <h2 class="guide-title">Canon imageCLASS MF267dw Review: Is It Worth It in 2026?</h2>
@@ -154,10 +137,8 @@
           </div>
         </div>
 
-        <div class="guide-card" data-tags="epson workforce wf2930 budget aio">
-          <div class="guide-img-wrap">
-            <img src="https://m.media-amazon.com/images/I/71mpdFjPoyL._AC_SL1500_.jpg" alt="Epson WorkForce WF-2930" class="guide-printer-img" onerror="this.src='https://via.placeholder.com/300x200?text=Epson+WorkForce+WF-2930'"/>
-          </div>
+        <div class="guide-card" data-tags="epson workforce wf2930">
+          <div class="guide-img">🖨️</div>
           <div class="guide-body">
             <div class="guide-meta"><span>👤 Admin</span><span>📅 13 Oct, 2025</span></div>
             <h2 class="guide-title">Epson WorkForce WF-2930: Best All-in-One Under $100?</h2>
@@ -166,10 +147,8 @@
           </div>
         </div>
 
-        <div class="guide-card" data-tags="brother mfc j4335dw inkvestment colour">
-          <div class="guide-img-wrap">
-            <img src="https://m.media-amazon.com/images/I/71pyhCsLHML._AC_SL1500_.jpg" alt="Brother MFC-J4335DW" class="guide-printer-img" onerror="this.src='https://via.placeholder.com/300x200?text=Brother+MFC-J4335DW'"/>
-          </div>
+        <div class="guide-card" data-tags="brother inkjet mfc j4335dw">
+          <div class="guide-img">🖨️</div>
           <div class="guide-body">
             <div class="guide-meta"><span>👤 Admin</span><span>📅 12 Oct, 2025</span></div>
             <h2 class="guide-title">Brother MFC-J4335DW INKvestment Review 2026</h2>
@@ -179,7 +158,7 @@
         </div>
 
       </div>
-      <p class="no-results" id="noResults" style="display:none">No guides found. Try a different search.</p>
+      <p class="no-results" id="noResults" style="display:none">No guides found.</p>
     </div>
 
     <div class="guides-sidebar">
@@ -195,27 +174,27 @@
         <h3>Recent Posts</h3>
         <div class="recent-posts">
           <div class="recent-post">
-            <img src="https://m.media-amazon.com/images/I/61pzJSbsqDL._AC_SL1500_.jpg" class="rp-img-real" alt="HP Smart Tank 5103"/>
+            <div class="rp-img">🖨️</div>
             <div class="rp-info"><a href="guide-hp-smart-tank-5103.html">HP Smart Tank 5103 Buying Guide 2026...</a><span>21 Oct, 2025</span></div>
             <span class="rp-arrow">›</span>
           </div>
           <div class="recent-post">
-            <img src="https://m.media-amazon.com/images/I/61T5EJNX2tL._AC_SL1500_.jpg" class="rp-img-real" alt="HP Smart Tank 5101"/>
+            <div class="rp-img">🖨️</div>
             <div class="rp-info"><a href="guide-hp-smart-tank-5101.html">HP Smart Tank 5101 Buying Guide 2026...</a><span>20 Oct, 2025</span></div>
             <span class="rp-arrow">›</span>
           </div>
           <div class="recent-post">
-            <img src="https://m.media-amazon.com/images/I/61yq7xXhiqL._AC_SL1500_.jpg" class="rp-img-real" alt="HP DeskJet 2855e"/>
+            <div class="rp-img">🖨️</div>
             <div class="rp-info"><a href="guide-hp-deskjet.html">HP DeskJet 2855e Buying Guide 2026...</a><span>19 Oct, 2025</span></div>
             <span class="rp-arrow">›</span>
           </div>
           <div class="recent-post">
-            <img src="https://m.media-amazon.com/images/I/71YBvSHWkAL._AC_SL1500_.jpg" class="rp-img-real" alt="Canon PIXMA"/>
+            <div class="rp-img">🖨️</div>
             <div class="rp-info"><a href="guide-canon-pixma.html">Canon PIXMA TR4720 Review 2026...</a><span>18 Oct, 2025</span></div>
             <span class="rp-arrow">›</span>
           </div>
           <div class="recent-post">
-            <img src="https://m.media-amazon.com/images/I/71TXjrJwYML._AC_SL1500_.jpg" class="rp-img-real" alt="Epson EcoTank"/>
+            <div class="rp-img">🖨️</div>
             <div class="rp-info"><a href="guide-epson-ecotank.html">Epson EcoTank ET-2800 Buying Guide...</a><span>17 Oct, 2025</span></div>
             <span class="rp-arrow">›</span>
           </div>
@@ -254,7 +233,7 @@
     <div style="max-width:1180px;margin:0 auto;padding:0 24px 20px">
       <div style="border:1px solid rgba(255,255,255,0.15);border-radius:8px;padding:18px 24px">
         <p style="color:rgba(255,255,255,0.6);font-size:0.82rem;line-height:1.7;margin:0">
-          <strong style="color:rgba(255,255,255,0.85)">Disclaimer:</strong> Print2Home operates as an independent third-party help site. We are not affiliated with, endorsed by, or connected to any printer brands shown here. We provide troubleshooting guides and expert tips to help fix printer issues. We are not liable for any damage that may occur while following our instructions.
+          <strong style="color:rgba(255,255,255,0.85)">Disclaimer:</strong> Print2Home operates as an independent third-party help site. We are not affiliated with, endorsed by, or connected to any printer brands shown here.
         </p>
       </div>
     </div>
@@ -262,27 +241,42 @@
   <div class="footer-bottom"><p>© 2025 Print2Home. All rights reserved.</p></div>
 </footer>
 
+<!-- 24/7 POPUP -->
+<div id="popup247" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);z-index:9999;align-items:center;justify-content:center">
+  <div style="background:white;border-radius:20px;padding:36px;max-width:480px;width:90%;text-align:center;position:relative;box-shadow:0 20px 60px rgba(0,0,0,0.3)">
+    <button onclick="close247()" style="position:absolute;top:16px;right:16px;background:none;border:none;font-size:1.4rem;cursor:pointer;color:#6B7280">✕</button>
+    <div style="background:linear-gradient(135deg,#1e3a8a,#1A56DB);border-radius:12px;padding:20px;margin-bottom:24px">
+      <div style="font-size:2.5rem">🖨️</div>
+      <h2 style="color:white;font-size:1.3rem;font-weight:900;margin:8px 0 4px">24/7 Expert Consultation</h2>
+      <p style="color:rgba(255,255,255,0.8);font-size:0.85rem;margin:0">Get instant help from certified printer experts</p>
+    </div>
+    <p style="font-weight:700;color:#374151;margin-bottom:12px">📞 Call us directly:</p>
+    <a href="tel:+18889008695" style="display:flex;align-items:center;justify-content:center;gap:10px;background:#EFF6FF;border:2px solid #BFDBFE;border-radius:10px;padding:14px;margin-bottom:10px;text-decoration:none">
+      <img src="https://flagcdn.com/20x15/us.png" alt="USA"/>
+      <span style="font-weight:800;color:#1A56DB">+1 888-900-8695 (USA)</span>
+    </a>
+    <a href="tel:+442080400210" style="display:flex;align-items:center;justify-content:center;gap:10px;background:#EFF6FF;border:2px solid #BFDBFE;border-radius:10px;padding:14px;margin-bottom:20px;text-decoration:none">
+      <img src="https://flagcdn.com/20x15/gb.png" alt="UK"/>
+      <span style="font-weight:800;color:#1A56DB">+44 20-8040-0210 (UK)</span>
+    </a>
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px">
+      <div style="flex:1;height:1px;background:#E5E7EB"></div>
+      <span style="color:#9CA3AF;font-size:0.85rem">OR</span>
+      <div style="flex:1;height:1px;background:#E5E7EB"></div>
+    </div>
+    <a href="details.html" style="display:block;background:linear-gradient(135deg,#1e3a8a,#1A56DB);color:white;padding:15px;border-radius:10px;font-weight:800;text-decoration:none;margin-bottom:12px">📝 Fill Form — Get Callback</a>
+    <p style="color:#9CA3AF;font-size:0.78rem;margin:0">Callback time: <strong style="color:#059669">under 5 minutes</strong></p>
+  </div>
+</div>
+
 <script>
 document.getElementById('hamburger').addEventListener('click',()=>document.getElementById('mobileMenu').classList.toggle('open'));
-function searchGuides() {
-  const q = document.getElementById('searchInput').value.toLowerCase();
-  filterCards(q);
-}
-function sidebarSearchGuides() {
-  const q = document.getElementById('sidebarSearch').value.toLowerCase();
-  document.getElementById('searchInput').value = q;
-  filterCards(q);
-}
-function filterCards(q) {
-  const cards = document.querySelectorAll('.guide-card');
-  let found = 0;
-  cards.forEach(card => {
-    const text = (card.dataset.tags + ' ' + card.innerText).toLowerCase();
-    if (!q || text.includes(q)) { card.style.display='flex'; found++; }
-    else card.style.display='none';
-  });
-  document.getElementById('noResults').style.display = found===0 ? 'block' : 'none';
-}
+function searchGuides(){filterCards(document.getElementById('searchInput').value.toLowerCase());}
+function sidebarSearchGuides(){const q=document.getElementById('sidebarSearch').value.toLowerCase();document.getElementById('searchInput').value=q;filterCards(q);}
+function filterCards(q){const cards=document.querySelectorAll('.guide-card');let found=0;cards.forEach(card=>{const text=(card.dataset.tags+' '+card.innerText).toLowerCase();if(!q||text.includes(q)){card.style.display='flex';found++;}else card.style.display='none';});document.getElementById('noResults').style.display=found===0?'block':'none';}
+function show247Popup(e){e.preventDefault();document.getElementById('popup247').style.display='flex';}
+function close247(){document.getElementById('popup247').style.display='none';}
+window.onclick=function(e){if(e.target.id==='popup247')close247();}
 </script>
 </body>
 </html>
