@@ -41,7 +41,7 @@
   </div>
 </header>
 
-<main class="hero-section" style="min-height:100vh;background-image:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url('https://5.imimg.com/data5/SELLER/Default/2025/9/542173587/XH/TK/HV/250121718/printer-repairing-service.png');background-size:cover;background-position:center;background-repeat:no-repeat;display:flex;align-items:center;justify-content:center">
+<main class="hero-section" style="min-height:100vh;background-image:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url('https://images.pexels.com/photos/4792733/pexels-photo-4792733.jpeg');background-size:cover;background-position:center;background-repeat:no-repeat;display:flex;align-items:center;justify-content:center">
   <div class="hero-container" style="width:100%;max-width:1180px;margin:0 auto;padding:40px 24px;text-align:center">
 
     <h1 style="font-size:2.8rem;font-weight:900;color:white;text-shadow:2px 2px 8px rgba(0,0,0,0.9);margin-bottom:16px">
@@ -52,20 +52,52 @@
       Choose your printer manufacturer from the list below to access detailed, step-by-step guidance for diagnosing and resolving common printer issues, including appearing offline, wireless setup, printing blank pages, displayed error codes, and scanner or multifunction failures.
     </p>
 
-    <!-- BRAND CIRCLES -->
-    <div style="display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin:32px 0">
-      <div class="brand-circle-card" onclick="selectAndGo('HP')">
-        <div class="brand-circle-big">HP</div>
-      </div>
-      <div class="brand-circle-card" onclick="selectAndGo('Canon')">
-        <div class="brand-circle-big">CANON</div>
-      </div>
-      <div class="brand-circle-card" onclick="selectAndGo('Epson')">
-        <div class="brand-circle-big">EPSON</div>
-      </div>
-      <div class="brand-circle-card" onclick="selectAndGo('Brother')">
-        <div class="brand-circle-big">BROTHER</div>
-      </div>
+    <div class="brand-grid">
+
+      <label class="brand-card">
+        <input type="radio" name="brand" value="Canon"/>
+        <div class="brand-card-inner">
+          <div class="brand-radio"></div>
+          <div class="brand-logo-circle" style="background:#e31b23;">
+            <span class="brand-text-logo" style="color:white;font-size:1.3rem;font-weight:800;font-style:italic;">Canon</span>
+          </div>
+          <span class="brand-label">Canon</span>
+        </div>
+      </label>
+
+      <label class="brand-card">
+        <input type="radio" name="brand" value="HP"/>
+        <div class="brand-card-inner">
+          <div class="brand-radio"></div>
+          <div class="brand-logo-circle" style="background:#0096d6;">
+            <span class="brand-text-logo" style="color:white;font-size:2.2rem;font-weight:900;">hp</span>
+          </div>
+          <span class="brand-label">HP</span>
+        </div>
+      </label>
+
+      <label class="brand-card">
+        <input type="radio" name="brand" value="Brother"/>
+        <div class="brand-card-inner">
+          <div class="brand-radio"></div>
+          <div class="brand-logo-circle" style="background:#003087;">
+            <span class="brand-text-logo" style="color:white;font-size:0.95rem;font-weight:800;">brother</span>
+          </div>
+          <span class="brand-label">Brother</span>
+        </div>
+      </label>
+
+      <label class="brand-card">
+        <input type="radio" name="brand" value="Epson"/>
+        <div class="brand-card-inner">
+          <div class="brand-radio"></div>
+          <div class="brand-logo-circle" style="background:#003087;">
+            <span class="brand-text-logo" style="color:white;font-size:1rem;font-weight:800;letter-spacing:1px;">EPSON</span>
+          </div>
+          <span class="brand-label">Epson</span>
+        </div>
+      </label>
+
     </div>
 
     <!-- FEATURE BOXES -->
