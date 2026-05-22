@@ -54,51 +54,58 @@
 
     <div class="brand-grid">
 
-      <label class="brand-card">
-        <input type="radio" name="brand" value="Canon"/>
-        <div class="brand-card-inner">
-          <div class="brand-radio"></div>
-          <div class="brand-logo-circle" style="background:#e31b23;">
-            <span class="brand-text-logo" style="color:white;font-size:1.3rem;font-weight:800;font-style:italic;">Canon</span>
-          </div>
-          <span class="brand-label">Canon</span>
-        </div>
-      </label>
+      <!-- BRAND CIRCLES -->
+<div style="display:flex;justify-content:center;gap:28px;flex-wrap:wrap;margin:32px 0">
 
-      <label class="brand-card">
-        <input type="radio" name="brand" value="HP"/>
-        <div class="brand-card-inner">
-          <div class="brand-radio"></div>
-          <div class="brand-logo-circle" style="background:#0096d6;">
-            <span class="brand-text-logo" style="color:white;font-size:2.2rem;font-weight:900;">hp</span>
-          </div>
-          <span class="brand-label">HP</span>
-        </div>
-      </label>
-
-      <label class="brand-card">
-        <input type="radio" name="brand" value="Brother"/>
-        <div class="brand-card-inner">
-          <div class="brand-radio"></div>
-          <div class="brand-logo-circle" style="background:#003087;">
-            <span class="brand-text-logo" style="color:white;font-size:0.95rem;font-weight:800;">brother</span>
-          </div>
-          <span class="brand-label">Brother</span>
-        </div>
-      </label>
-
-      <label class="brand-card">
-        <input type="radio" name="brand" value="Epson"/>
-        <div class="brand-card-inner">
-          <div class="brand-radio"></div>
-          <div class="brand-logo-circle" style="background:#003087;">
-            <span class="brand-text-logo" style="color:white;font-size:1rem;font-weight:800;letter-spacing:1px;">EPSON</span>
-          </div>
-          <span class="brand-label">Epson</span>
-        </div>
-      </label>
-
+  <div onclick="selectAndGo('HP')" style="cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:12px;transition:transform 0.3s" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform='translateY(0)'">
+    <div style="width:140px;height:140px;border-radius:50%;background:rgba(255,255,255,0.95);display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(0,0,0,0.3);border:3px solid rgba(255,255,255,0.6)">
+      <div style="width:70px;height:70px;border-radius:50%;background:#0096d6;display:flex;align-items:center;justify-content:center">
+        <span style="color:white;font-size:1.8rem;font-weight:900">hp</span>
+      </div>
     </div>
+    <div style="text-align:center">
+      <div style="color:white;font-size:1.1rem;font-weight:900;text-shadow:1px 1px 4px rgba(0,0,0,0.8)">HP</div>
+      <div style="color:rgba(255,255,255,0.8);font-size:0.8rem">Printer Support</div>
+    </div>
+  </div>
+
+  <div onclick="selectAndGo('Canon')" style="cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:12px;transition:transform 0.3s" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform='translateY(0)'">
+    <div style="width:140px;height:140px;border-radius:50%;background:rgba(255,255,255,0.95);display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(0,0,0,0.3);border:3px solid rgba(255,255,255,0.6)">
+      <div style="width:70px;height:70px;border-radius:50%;background:#e31b23;display:flex;align-items:center;justify-content:center">
+        <span style="color:white;font-size:1rem;font-weight:900;font-style:italic">Canon</span>
+      </div>
+    </div>
+    <div style="text-align:center">
+      <div style="color:white;font-size:1.1rem;font-weight:900;text-shadow:1px 1px 4px rgba(0,0,0,0.8)">CANON</div>
+      <div style="color:rgba(255,255,255,0.8);font-size:0.8rem">Printer Support</div>
+    </div>
+  </div>
+
+  <div onclick="selectAndGo('Epson')" style="cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:12px;transition:transform 0.3s" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform='translateY(0)'">
+    <div style="width:140px;height:140px;border-radius:50%;background:rgba(255,255,255,0.95);display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(0,0,0,0.3);border:3px solid rgba(255,255,255,0.6)">
+      <div style="width:70px;height:70px;border-radius:50%;background:#00539b;display:flex;align-items:center;justify-content:center">
+        <span style="color:white;font-size:0.85rem;font-weight:900;letter-spacing:1px">EPSON</span>
+      </div>
+    </div>
+    <div style="text-align:center">
+      <div style="color:white;font-size:1.1rem;font-weight:900;text-shadow:1px 1px 4px rgba(0,0,0,0.8)">EPSON</div>
+      <div style="color:rgba(255,255,255,0.8);font-size:0.8rem">Printer Support</div>
+    </div>
+  </div>
+
+  <div onclick="selectAndGo('Brother')" style="cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:12px;transition:transform 0.3s" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform='translateY(0)'">
+    <div style="width:140px;height:140px;border-radius:50%;background:rgba(255,255,255,0.95);display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(0,0,0,0.3);border:3px solid rgba(255,255,255,0.6)">
+      <div style="width:70px;height:70px;border-radius:50%;background:#003087;display:flex;align-items:center;justify-content:center">
+        <span style="color:white;font-size:0.75rem;font-weight:900">brother</span>
+      </div>
+    </div>
+    <div style="text-align:center">
+      <div style="color:white;font-size:1.1rem;font-weight:900;text-shadow:1px 1px 4px rgba(0,0,0,0.8)">BROTHER</div>
+      <div style="color:rgba(255,255,255,0.8);font-size:0.8rem">Printer Support</div>
+    </div>
+  </div>
+
+</div>
 
     <div class="get-help-row">
       <button class="get-help-btn" onclick="getBrandHelp()">GET HELP NOW →</button>
