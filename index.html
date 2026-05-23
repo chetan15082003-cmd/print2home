@@ -216,10 +216,7 @@
 <script src="js/main.js"></script>
 <script src="security.js"></script>
 <script>
-function show247Popup(e){e.preventDefault();document.getElementById('popup247').style.display='flex';}
-function close247(){document.getElementById('popup247').style.display='none';}
-window.onclick=function(e){if(e.target.id==='popup247')close247();}
-
+  <!-- animate And Go -->
   function animateAndGo(el, brand) {
   sessionStorage.setItem('brand', brand);
   const circle = el.querySelector('div');
@@ -229,6 +226,9 @@ window.onclick=function(e){if(e.target.id==='popup247')close247();}
     window.location.href = 'issue.html';
   }, 400);
 }
+function show247Popup(e){e.preventDefault();document.getElementById('popup247').style.display='flex';}
+function close247(){document.getElementById('popup247').style.display='none';}
+window.onclick=function(e){if(e.target.id==='popup247')close247();}
 </script>
 </body>
 </html>
