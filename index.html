@@ -212,74 +212,74 @@
     <p style="color:#9CA3AF;font-size:0.78rem;margin:0">Callback time: <strong style="color:#059669">under 5 minutes</strong></p>
   </div>
 </div>
-  <script src="js/main.js"></script>
+  
+ <script src="js/main.js"></script>
 <script src="security.js"></script>
+<style>
+@keyframes zoomPulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.4); box-shadow: 0 0 80px rgba(255,255,255,1); }
+  100% { transform: scale(1.4); }
+}
+@keyframes rippleGrow {
+  0%   { width:20px; height:20px; opacity:1; margin-left:-10px; margin-top:-10px; }
+  100% { width:600px; height:600px; opacity:0; margin-left:-300px; margin-top:-300px; }
+}
+@keyframes screenFlash {
+  0%   { opacity:0; }
+  40%  { opacity:0.8; }
+  100% { opacity:0; }
+}
+.brand-ripple {
+  position:fixed;
+  border-radius:50%;
+  background:rgba(255,255,255,0.7);
+  pointer-events:none;
+  z-index:9999;
+  animation: rippleGrow 0.8s ease-out forwards;
+}
+.screen-flash {
+  position:fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background:white;
+  pointer-events:none;
+  z-index:9998;
+  animation: screenFlash 0.8s ease forwards;
+}
+</style>
 <script>
-
-// ===== BRAND ANIMATION =====
 function animateAndGo(el, brand) {
   sessionStorage.setItem('brand', brand);
 
-  const outerCircle = el.querySelector('div');
+  // 1. Zoom the circle
+  const circle = el.querySelector('div');
+  circle.style.animation = 'zoomPulse 0.8s ease forwards';
 
-  // Flash animation
-  outerCircle.style.transition = 'all 0.15s ease';
-  outerCircle.style.transform = 'scale(1.25)';
-  outerCircle.style.boxShadow = '0 0 80px rgba(255,255,255,0.9)';
+  // 2. Get click position for ripple
+  const rect = el.getBoundingClientRect();
+  const x = rect.left + rect.width / 2;
+  const y = rect.top + rect.height / 2;
 
-  // Create ripple effect
+  // 3. Create ripple
   const ripple = document.createElement('div');
-  ripple.style.cssText = `
-    position:fixed;
-    top:50%;left:50%;
-    width:20px;height:20px;
-    background:rgba(255,255,255,0.6);
-    border-radius:50%;
-    transform:translate(-50%,-50%) scale(0);
-    animation:rippleOut 0.6s ease-out forwards;
-    pointer-events:none;
-    z-index:9999;
-  `;
+  ripple.className = 'brand-ripple';
+  ripple.style.left = x + 'px';
+  ripple.style.top = y + 'px';
   document.body.appendChild(ripple);
 
-  // Add ripple CSS
-  const style = document.createElement('style');
-  style.textContent = `
-    @keyframes rippleOut {
-      0%   { transform:translate(-50%,-50%) scale(0); opacity:1; }
-      100% { transform:translate(-50%,-50%) scale(50); opacity:0; }
-    }
-    @keyframes flashWhite {
-      0%   { opacity:0; }
-      50%  { opacity:1; }
-      100% { opacity:0; }
-    }
-  `;
-  document.head.appendChild(style);
-
-  // Flash overlay
+  // 4. Flash screen
   const flash = document.createElement('div');
-  flash.style.cssText = `
-    position:fixed;
-    top:0;left:0;
-    width:100%;height:100%;
-    background:white;
-    opacity:0;
-    animation:flashWhite 0.5s ease forwards;
-    pointer-events:none;
-    z-index:9998;
-  `;
+  flash.className = 'screen-flash';
   document.body.appendChild(flash);
 
-  // Navigate after animation
+  // 5. Navigate after animation completes
   setTimeout(function() {
     window.location.href = 'issue.html';
-  }, 500);
+  }, 800);
 }
 
-// ===== 24/7 POPUP =====
 function show247Popup(e){e.preventDefault();document.getElementById('popup247').style.display='flex';}
 function close247(){document.getElementById('popup247').style.display='none';}
 window.onclick=function(e){if(e.target.id==='popup247')close247();}
-
 </script>
