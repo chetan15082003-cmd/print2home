@@ -212,11 +212,14 @@
     <p style="color:#9CA3AF;font-size:0.78rem;margin:0">Callback time: <strong style="color:#059669">under 5 minutes</strong></p>
   </div>
 </div>
-
+  
 <script src="js/main.js"></script>
 <script src="security.js"></script>
 <script>
-  
+function show247Popup(e){e.preventDefault();document.getElementById('popup247').style.display='flex';}
+function close247(){document.getElementById('popup247').style.display='none';}
+window.onclick=function(e){if(e.target.id==='popup247')close247();}
+
   function animateAndGo(el, brand) {
   sessionStorage.setItem('brand', brand);
   const circle = el.querySelector('div');
@@ -226,10 +229,6 @@
     window.location.href = 'issue.html';
   }, 400);
 }
-  
-function show247Popup(e){e.preventDefault();document.getElementById('popup247').style.display='flex';}
-function close247(){document.getElementById('popup247').style.display='none';}
-window.onclick=function(e){if(e.target.id==='popup247')close247();}
 </script>
 </body>
 </html>
